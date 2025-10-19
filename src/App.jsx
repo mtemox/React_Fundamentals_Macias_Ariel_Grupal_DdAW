@@ -14,10 +14,9 @@ import Septimo from "./pages/Septimo";
 import Noveno from "./pages/Noveno";
 import Decimo from "./pages/Decimo";
 
-
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/React_Fundamentals_Macias_Ariel_Grupal_DdAW/">
       <Routes>
 
         <Route path="/" element={<LandingPage />}>
