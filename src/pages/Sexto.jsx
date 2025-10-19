@@ -4,13 +4,10 @@
 
 */
 
-
-const Sexto = ({data}) => {
-
+const Sexto = ({ data }) => {
 
   return (
     <>
-
       <h2 className="text-orange-800">Hijo</h2>
       
       <div className="flex justify-center mb-8">
@@ -19,9 +16,10 @@ const Sexto = ({data}) => {
           
           <h2 className="text-lg font-semibold mb-2">Bienvenido(a) - {data.name}</h2>
 
-          <p className="mb-3">rol: {data.rol}</p>
-          
-          <p className="mb-3">email: {data.email}</p>
+          {data.rol && <p className="mb-3">rol: {data.rol}</p>}
+          {data.email && <p className="mb-3">email: {data.email}</p>}
+          {data.price && <p className="mb-3">price: ${data.price}</p>}
+          {data.inStock !== undefined && <p className="mb-3">in stock: {data.inStock ? "Yes" : "No"}</p>}
         
         </div>
 
