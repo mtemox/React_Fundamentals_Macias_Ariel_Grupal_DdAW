@@ -6,13 +6,19 @@
 
 import Sexto from "./Sexto"
 
-
 const Quinto = () => {
 
   const userProfile = {
     name: "Matew",
     rol: "Employee",
     email: "matew@gmail.com",
+  }
+
+  // Nuevo Ejemplo: Producto
+  const productInfo = {
+    name: "Laptop",
+    price: 999.99,
+    inStock: true,
   }
 
   return (
@@ -30,11 +36,13 @@ const Quinto = () => {
       <h2 className="text-green-700 text-center mt-8">Padre</h2>
       
       <div className="border-2 border-green-500 flex-colum justify-center items-center w-120 mx-auto mb-8">
-    
         <Sexto data={userProfile}/>
-        
       </div>
-    
+
+      <h2 className="text-blue-700 text-center mt-8">Nuevo Ejemplo: Producto</h2>
+      <div className="border-2 border-blue-500 flex-colum justify-center items-center w-120 mx-auto mb-8">
+        <Sexto data={productInfo}/>
+      </div>
     </>
   )
 }
