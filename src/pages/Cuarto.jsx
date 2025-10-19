@@ -1,4 +1,3 @@
-
 /*
 
   1- customHook
@@ -7,6 +6,7 @@
 
 import { useState } from "react"
 import { useFetch } from "../customHook/useFetch"
+import { useWindowSize } from "../customHook/useWindowSize" 
 
 const Cuarto = () => {
   
@@ -14,20 +14,19 @@ const Cuarto = () => {
   const [memes, setMemes] = useState([])
   
   const fetchDataBackend = useFetch()
+  const { width, height } = useWindowSize() 
 
-  const getDataProducts = async()=>{
+  const getDataProducts = async()=> {
     const products = await fetchDataBackend("https://fakestoreapi.com/products")
     setProducts(products)
     console.log(products)  
   }
   
-  const getDataMemes = async()=>{
+  const getDataMemes = async()=> {
     const memes = await fetchDataBackend("https://api.imgflip.com/get_memes")
     setMemes(memes)
     console.log(memes)  
   }
-
-
 
   return (
     <>
@@ -50,12 +49,32 @@ const Cuarto = () => {
           <pre>{JSON.stringify(products[3]?.title)}</pre>
           <pre>{JSON.stringify(memes.data?.memes[0]?.name)}</pre>
           
-          <button className="bg-violet-700 text-white py-1 px-3 mx-1 rounded mt-4" onClick={getDataProducts}>Obtener Productos</button>
-          <button className="bg-violet-700 text-white py-1 px-3 rounded" onClick={getDataMemes}>Obtener Memes</button>
+          <button 
+            className="bg-violet-700 text-white py-1 px-3 mx-1 rounded mt-4" 
+            onClick={getDataProducts}
+          >
+            Obtener Productos
+          </button>
+          
+          <button 
+            className="bg-violet-700 text-white py-1 px-3 rounded" 
+            onClick={getDataMemes}
+          >
+            Obtener Memes
+          </button>
         </div>
-
       </div>
 
+      {/*NUEVO EJEMPLO */}
+      <div className="flex justify-center mt-10">
+        <div className="border rounded-lg p-4 w-80 text-center bg-indigo-100 shadow-lg">
+          <h2 className="text-lg font-semibold mb-2 underline">
+            Nuevo Ejemplo: Tamaño de la Ventana
+          </h2>
+          <p>📏 Ancho: <b>{width}px</b></p>
+          <p>📐 Alto: <b>{height}px</b></p>  
+        </div>
+      </div>
     </>
   )
 }
