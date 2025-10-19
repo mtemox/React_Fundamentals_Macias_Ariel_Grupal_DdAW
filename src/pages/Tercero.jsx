@@ -1,5 +1,5 @@
 /*
-  2- useEffect (Ejemplo: Reloj en tiempo real)
+  2- useEffect
 */
 
 import { useEffect, useState } from "react"
