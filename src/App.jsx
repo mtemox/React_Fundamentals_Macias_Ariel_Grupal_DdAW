@@ -16,7 +16,7 @@ import Decimo from "./pages/Decimo";
 
 function App() {
   return (
-    <BrowserRouter basename="/React_Fundamentals_Macias_Ariel_Grupal_DdAW/">
+    <BrowserRouter>
       <Routes>
 
         <Route path="/" element={<LandingPage />}>
